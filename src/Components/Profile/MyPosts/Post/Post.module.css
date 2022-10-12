@@ -1,0 +1,15 @@
+.item {
+    padding: 10px 0 0 0;
+}
+
+.avatar {
+    width: 70px;
+    border-radius: 50%;
+}
+
+.textPost {
+}
+
+.likes span{
+    border-bottom: 1px solid black;
+}

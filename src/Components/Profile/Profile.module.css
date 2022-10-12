@@ -1,0 +1,13 @@
+.profile {
+    grid-area: profile;
+    background: darkorange;
+}
+
+.logo img {
+    width: 1000px;
+    height: 350px;
+}
+
+.avatar img {
+    width: 200px;
+}
