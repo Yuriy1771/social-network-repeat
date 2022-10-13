@@ -18,7 +18,7 @@ function App(props) {
                     <Route path='/profile' element={<Profile/>}/>
                 </Routes>
                 <Routes>
-                    <Route path='/dialogs' element={<Dialogs/>}/>
+                    <Route path='/dialogs/*' element={<Dialogs/>}/>
                 </Routes>
                 <Routes>
                     <Route path='/news' element={<News/>}/>

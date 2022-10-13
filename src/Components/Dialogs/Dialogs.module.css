@@ -1,0 +1,33 @@
+.dialogs {
+    display: grid;
+
+    grid-template-areas:
+    'dialog messages';
+    grid-template-columns: 2fr 10fr ;
+}
+
+.dialogsItem {
+    grid-area: dialog;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.dialogsItem .acitive {
+    color: white;
+}
+
+.dialog a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.messages {
+    grid-area: messages;
+    border: 1px solid black;
+    background: coral;
+    padding: 10px;
+}
+.message {
+}
+
