@@ -1,6 +1,7 @@
 .navbar {
     grid-area: navbar;
     background: bisque;
+    padding: 20px;
 }
 
 .item a{
@@ -10,6 +11,7 @@
     font-size: 20px;
 }
 
-.item .active {
-    color: black;
+.item a.active {
+    color: #404040;
+    font-size: 22px;
 }
