@@ -1,13 +1,18 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
+
 function MyPosts(props) {
     return (
         <div>
-            My posts
-            <div>
-               <textarea></textarea>
+            <ProfileInfo/>
+            <div className={classes.myPosts}>
+                <p>My posts</p>
+            </div>
+            <div className={classes.addPostBlock}>
+                <textarea></textarea>
                 <div>
-                <button>Add post</button>
+                    <button>Add post</button>
                 </div>
             </div>
         </div>

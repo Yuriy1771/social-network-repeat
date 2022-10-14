@@ -1,2 +1,11 @@
 .item {
 }
+
+.addPostBlock {
+    padding: 10px;
+}
+
+.myPosts p{
+    padding: 10px 10px 0 10px;
+    font-size: 20px;
+}
