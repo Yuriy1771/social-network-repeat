@@ -8,8 +8,6 @@ function Profile(props) {
         <div className={classes.profile}>
             <div className={classes.content}>
                 <MyPosts/>
-                <Post message='Hi, how are you?' likesCount='12' name='Yuriy'/>
-                <Post message='Lol, this video is really cool!' likesCount='21' name='Yuriy'/>
             </div>
         </div>
     )
