@@ -6,6 +6,7 @@ const ActiveLink = ({isActive}) => isActive ? classes.active : classes.item;
 
 function Navbar(props) {
     return (
+        <div className={classes.navbarContainer}>
         <div className={classes.navbar}>
             <div className={`${classes.item} ${classes.active}`}>
                 <NavLink to="/profile" className={ActiveLink}>Profile</NavLink>
@@ -22,6 +23,7 @@ function Navbar(props) {
             <div className={classes.item}>
                 <NavLink to="/settings" className={ActiveLink}>Settings</NavLink>
             </div>
+        </div>
         </div>
     )
 }

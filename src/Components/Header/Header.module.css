@@ -1,8 +1,10 @@
 .header {
     grid-area: header;
-    background: lightblue;
+    background: #ffeeda;
+    box-shadow: 0 0 5px 1px #c2985d;;
 }
 
 .logo img {
-    width: 80px;
+    width: 60px;
+    margin: 0 0 0 10px;
 }

@@ -8,9 +8,13 @@
     grid-template-areas:
     "header header "
     "navbar content ";
+    padding: 10px;
 }
 
 .app-wrapper-content {
     grid-area: content;
-    background: darkorange;
+    margin: 10px 0 0 0;
+    background: #ffeeda;
+    box-shadow: 0 0 5px 1px #c2985d;
+
 }

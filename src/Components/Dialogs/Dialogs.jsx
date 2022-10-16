@@ -8,26 +8,26 @@ function Dialogs(props) {
 
     let newDialog = props.state.dialogsPage.dialogs.map((d) => {
         return (
-        <DialogItem name={d.name} id={d.id}/>
+            <DialogItem name={d.name} id={d.id} avatar={d.avatar}/>
         )
     })
 
     let newMessage = props.state.dialogsPage.messages.map((m) => {
         return (
-            <MessageItem message={m.message} id={m.id} />
+            <MessageItem message={m.message} id={m.id}/>
         )
     })
 
 
     return (
-        <div className={classes.dialogs}>
-            <div className={classes.dialogsItem}>
-                {newDialog}
+            <div className={classes.dialogs}>
+                <div className={classes.dialogsItem}>
+                    {newDialog}
+                </div>
+                <div className={classes.messages}>
+                    {newMessage}
+                </div>
             </div>
-            <div className={classes.messages}>
-                {newMessage}
-            </div>
-        </div>
     )
 }
 

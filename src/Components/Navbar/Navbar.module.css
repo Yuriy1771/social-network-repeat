@@ -1,7 +1,8 @@
 .navbar {
     grid-area: navbar;
-    background: bisque;
+    background: #ffeeda;
     padding: 20px;
+    box-shadow: 0 0 5px 1px #c2985d;
 }
 
 .item a{
@@ -14,4 +15,9 @@
 .item a.active {
     color: #404040;
     font-size: 22px;
+}
+
+.navbarContainer {
+    padding: 10px 0 0 0;
+    margin: 0 10px 0 0;
 }

@@ -3,30 +3,32 @@
 
     grid-template-areas:
     'dialog messages';
-    grid-template-columns: 2fr 10fr ;
+    grid-template-columns: 3fr 10fr ;
 }
 
 .dialogsItem {
     grid-area: dialog;
-    border: 1px solid black;
     padding: 10px;
 }
 
-.dialogsItem .acitive {
-    color: white;
-}
+/*.dialog .ActiveLink {*/
+/*    color: #404040;*/
+/*    font-size: 22px;*/
+/*}*/
 
-.dialog a {
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-}
+/*.dialog a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    text-shadow: 1px 1px 3px black;*/
+/*    font-size: 20px;*/
+/*    border: 1px solid #c2985d;*/
+/*}*/
 
 .messages {
     grid-area: messages;
-    border: 1px solid black;
-    background: coral;
+    background: #ffeeda;
     padding: 10px;
+    border-left: 1px solid #c2985d;
 }
 .message {
 }
