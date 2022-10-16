@@ -3,7 +3,7 @@ import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
 import Dialogs from "./Components/Dialogs/Dialogs";
-import {Route, Routes} from "react-router-dom";
+import {defer, Route, Routes} from "react-router-dom";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
@@ -15,10 +15,10 @@ function App(props) {
             <Navbar/>
             <div className='app-wrapper-content'>
                 <Routes>
-                    <Route path='/profile' element={<Profile/>}/>
+                    <Route path='/profile' element={<Profile state={props.state}/>}/>
                 </Routes>
                 <Routes>
-                    <Route path='/dialogs/*' element={<Dialogs/>}/>
+                    <Route path='/dialogs/*' element={<Dialogs state={props.state}/>}/>
                 </Routes>
                 <Routes>
                     <Route path='/news' element={<News/>}/>
