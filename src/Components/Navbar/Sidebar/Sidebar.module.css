@@ -1,0 +1,40 @@
+.sidebarContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60px;
+    grid-template-areas: 'l c r';
+}
+
+.sidebarBlockLeft {
+    grid-area: l;
+    width: 50px;
+    height: auto;
+    border: 1px solid black;
+}
+
+.sidebarBlockCenter {
+    grid-area: c;
+    width: 50px;
+    border: 1px solid black;
+}
+
+.sidebarBlockRight {
+    grid-area: r;
+    width: 50px;
+    border: 1px solid black;
+}
+
+.sidebarName {
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+}
+
+.avatarSidebar {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 5px 1px #c2985d;
+    border-radius: 50%;
+    margin: 0 auto;
+}
