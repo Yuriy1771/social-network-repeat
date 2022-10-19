@@ -33,3 +33,12 @@
 .message {
 }
 
+.addMessage {
+    margin: 20px 0 0 0;
+}
+
+.addMessage textarea {
+    width: 200px;
+    height: 40px;
+}
+

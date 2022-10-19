@@ -4,18 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
-import state from './Redux/state';
+import state, {addPost} from './Redux/state';
 
+let rerenderEntireTree = () => {
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(
+        <React.StrictMode>
+            <BrowserRouter>
+                <App state={state} addPost={addPost}/>
+            </BrowserRouter>
+        </React.StrictMode>
+    );
+}
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-      <BrowserRouter>
-    <App state={state}/>
-      </BrowserRouter>
-  </React.StrictMode>
-);
-
-
+rerenderEntireTree()
 
 reportWebVitals();

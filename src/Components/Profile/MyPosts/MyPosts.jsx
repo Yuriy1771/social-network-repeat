@@ -11,6 +11,15 @@ function MyPosts(props) {
         )
     })
 
+    let newPostElement = React.createRef();
+
+    let addPostElement = () => {
+        let text = newPostElement.current.value;
+        console.log(text)
+        props.addPost(text);
+
+    }
+
     return (
         <div>
             <ProfileInfo/>
@@ -18,9 +27,9 @@ function MyPosts(props) {
                 <p>My posts</p>
             </div>
             <div className={classes.addPostBlock}>
-                <textarea></textarea>
+                <textarea ref={newPostElement}></textarea>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={addPostElement}>Add post</button>
                 </div>
                 <div>
                     {newPost}
