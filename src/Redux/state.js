@@ -1,16 +1,56 @@
 let rerenderEntireTree = () => {
 }
 
-let state = {
-    profilePage: {
-        posts: [
-            {message: 'Hi, how are you?', likesCount: '12', name: 'Yuriy', id: 1,},
-            {message: 'Lol, this video is really cool!', likesCount: '21', name: 'Yuriy', id: 2,},
-        ],
-        newPostText: '',
-    },
-    dialogsPage: {
-        dialogs: [
+let store = {
+    _state: {
+        profilePage: {
+            posts: [
+                {message: 'Hi, how are you?', likesCount: '12', name: 'Yuriy', id: 1,},
+                {message: 'Lol, this video is really cool!', likesCount: '21', name: 'Yuriy', id: 2,},
+            ],
+            newPostText: '',
+        },
+        dialogsPage: {
+            dialogs: [
+                {
+                    id: 1,
+                    name: 'Stela',
+                    avatar: 'https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?w=740&t=st=1665922271~exp=1665922871~hmac=d991083635ddce751d0ffca987adebaa59b751da06e7cc584828800a7ccef4e6',
+                },
+                {
+                    id: 2,
+                    name: 'Igor',
+                    avatar: 'https://img.freepik.com/free-photo/https://img.freepik.com/free-photo/handsome-young-man-with-new-stylish-haircut_176420-19637.jpg?w=740&t=st=1665924138~exp=1665924738~hmac=30cfa413717ec5655e357656e236521ae857e00a288d7f3d329e6e121ed3e706',
+                },
+                {
+                    id: 3,
+                    name: 'Vika',
+                    avatar: 'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?w=2000',
+                },
+                {
+                    id: 4,
+                    name: 'Stas',
+                    avatar: 'https://img.freepik.com/free-photo/cool-handsome-redhead-man-smiling-with-confidence-cross-arms-chest-looking-happy-unbothered-standing-casual-relaxed-pose-against-white-background_176420-53795.jpg?t=st=1665924131~exp=1665924731~hmac=c3b39af8f16c07f567f2845144338d9f319c4481e484a2598f26778746439e0c',
+                },
+                {
+                    id: 5,
+                    name: 'David',
+                    avatar: 'https://img.freepik.com/free-photo/concept-people-young-man-yellow-background_185193-86324.jpg?w=740&t=st=1665924270~exp=1665924870~hmac=cd056926934ea380ec38b78812075cda6920244b0f357b2a390ca143cdb4951f',
+                },
+                {
+                    id: 6,
+                    name: 'Lily',
+                    avatar: 'https://img.freepik.com/free-photo/https://https://img.freepik.com/premium-photo/portrait-confident-beautiful-brunette-woman-turning-face-camera-with-dreamy-look-white_1258-19144.jpg?w=740',
+                },
+            ],
+            messages: [
+                {id: 1, message: 'Hi'},
+                {id: 2, message: 'How are you?'},
+                {id: 3, message: 'Ahaha, this is fun!'},
+            ],
+            newMessageText: '',
+        },
+        sidebar: [
             {
                 id: 1,
                 name: 'Stela',
@@ -26,86 +66,53 @@ let state = {
                 name: 'Vika',
                 avatar: 'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?w=2000',
             },
-            {
-                id: 4,
-                name: 'Stas',
-                avatar: 'https://img.freepik.com/free-photo/cool-handsome-redhead-man-smiling-with-confidence-cross-arms-chest-looking-happy-unbothered-standing-casual-relaxed-pose-against-white-background_176420-53795.jpg?t=st=1665924131~exp=1665924731~hmac=c3b39af8f16c07f567f2845144338d9f319c4481e484a2598f26778746439e0c',
-            },
-            {
-                id: 5,
-                name: 'David',
-                avatar: 'https://img.freepik.com/free-photo/concept-people-young-man-yellow-background_185193-86324.jpg?w=740&t=st=1665924270~exp=1665924870~hmac=cd056926934ea380ec38b78812075cda6920244b0f357b2a390ca143cdb4951f',
-            },
-            {
-                id: 6,
-                name: 'Lily',
-                avatar: 'https://img.freepik.com/free-photo/https://https://img.freepik.com/premium-photo/portrait-confident-beautiful-brunette-woman-turning-face-camera-with-dreamy-look-white_1258-19144.jpg?w=740',
-            },
-        ],
-        messages: [
-            {id: 1, message: 'Hi'},
-            {id: 2, message: 'How are you?'},
-            {id: 3, message: 'Ahaha, this is fun!'},
-        ],
-        newMessageText: '',
+        ]
     },
-    sidebar: [
-        {
-            id: 1,
-            name: 'Stela',
-            avatar: 'https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?w=740&t=st=1665922271~exp=1665922871~hmac=d991083635ddce751d0ffca987adebaa59b751da06e7cc584828800a7ccef4e6',
-        },
-        {
-            id: 2,
-            name: 'Igor',
-            avatar: 'https://img.freepik.com/free-photo/https://img.freepik.com/free-photo/handsome-young-man-with-new-stylish-haircut_176420-19637.jpg?w=740&t=st=1665924138~exp=1665924738~hmac=30cfa413717ec5655e357656e236521ae857e00a288d7f3d329e6e121ed3e706',
-        },
-        {
+    getState() {
+        return this._state;
+    },
+    _callSubscriber() {
+        console.log('state')
+    },
+    addPost () {
+        debugger
+        let newPost = {
+            message: this._state.profilePage.newPostText,
+            likesCount: '0',
+            name: 'Yuriy',
             id: 3,
-            name: 'Vika',
-            avatar: 'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?w=2000',
-        },
-    ]
+        }
+        this._state.profilePage.posts.push(newPost);
+        this._state.profilePage.newPostText = '';
+        this._callSubscriber(this._state);
+    },
+
+    updateNewPostText (newText) {
+        this._state.profilePage.newPostText = newText;
+        this._callSubscriber(this._state);
+    },
+
+    addMessage () {
+        let newMessage = {
+            id: 4,
+            message: this._state.dialogsPage.newMessageText,
+        }
+
+        this._state.dialogsPage.messages.push(newMessage);
+        this._state.dialogsPage.newMessageText = '';
+        this._callSubscriber(this._state);
+    },
+
+    updateNewMessageText (newText) {
+        this._state.dialogsPage.newMessageText = newText;
+        this._callSubscriber(this._state);
+    },
+
+    subscribe(observer) {
+        this._callSubscriber = observer;
+    },
 }
 
-export const addPost = () => {
-    let newPost = {
-        message: state.profilePage.newPostText,
-        likesCount: '0',
-        name: 'Yuriy',
-        id: 3,
-    }
-    state.profilePage.posts.push(newPost);
-    state.profilePage.newPostText = '';
-    rerenderEntireTree(state);
-}
+window.store = store;
 
-export const updateNewPostText = (newText) => {
-    state.profilePage.newPostText = newText;
-    rerenderEntireTree(state);
-}
-
-export const addMessage = () => {
-    let newMessage = {
-        id: 4,
-        message: state.dialogsPage.newMessageText,
-    }
-
-    state.dialogsPage.messages.push(newMessage);
-    state.dialogsPage.newMessageText = '';
-    rerenderEntireTree(state);
-}
-
-export const updateNewMessageText = (newText) => {
-    state.dialogsPage.newMessageText = newText;
-    rerenderEntireTree(state);
-}
-
-
-export const subscribe = (observer) => {
-    rerenderEntireTree = observer;
-}
-
-window.state = state;
-
-export default state;
+export default store;
