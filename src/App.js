@@ -28,7 +28,7 @@ function App(props) {
                     />}/>
                 </Routes>
                 <Routes>
-                    <Route path='/news' element={<News/>}/>
+                    <Route path='/news' element={<News state={props.state}/>}/>
                 </Routes>
                 <Routes>
                     <Route path='/music' element={<Music/>}/>

@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 0 0 ;
+}
+.news {
+    background: bisque;
+    width: 600px;
+    box-shadow: 0 0 5px 1px #c2985d;
+}
+
+.description {
+    padding: 10px;
+}
+
+.description img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 1px #c2985d;
+}
+
+.description span {
+    padding: 10px;
+    font-size: 19px;
+}
+
+.textNews {
+    padding: 0 20px 0 20px;
+}
+
+.imgNews {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 20px 0;
+}
+
+.imgNews img {
+    width: 400px;
+}
+
+.likesCount {
+    padding: 0px 0px 5px 20px;
+}
+
+.likesCount span {
+    border-bottom: 1px solid #c2985d;
+}
