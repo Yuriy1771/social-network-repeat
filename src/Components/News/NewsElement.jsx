@@ -13,7 +13,7 @@ function NewsElement(props) {
                     <p>{props.textNews}</p>
                 </div>
                 <div className={classes.imgNews}>
-                    <img src={props.imgNews} alt=""/>
+                    <img src={props.imgNews} alt="imgNews"/>
                 </div>
                 <div className={classes.likesCount}>
                     <span>Likes {props.likesCount}</span>

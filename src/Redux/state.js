@@ -1,5 +1,6 @@
 let rerenderEntireTree = () => {
 }
+
 let store = {
     _state: {
         profilePage: {
@@ -108,13 +109,13 @@ let store = {
                     imgNews: 'https://d.newsweek.com/en/full/520858/supermoon-moon-smartphone-photo-picture.jpg?w=1600&h=1200&q=88&f=ee2b0e8d2fcaeb2fb7313f07712a2440',
                     likesCount: 32,
                 },
-            ]
-
-
+            ],
+            newPostText: '',
+            newPostImg: '',
         }
     },
     _callSubscriber() {
-        console.log('state')
+
     },
 
     getState() {
@@ -148,6 +149,23 @@ let store = {
             this._callSubscriber(this._state);
         } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
             this._state.dialogsPage.newMessageText = action.newText;
+            this._callSubscriber(this._state);
+        } else if (action.type === 'ADD-NEWS') {
+            let newNews = {
+                id: 6,
+                avatar: "https://i.imgur.com/dmRcOOI.png",
+                name: 'Yuriy',
+                textNews: this._state.newsPage.newPostText,
+                imgNews: this._state.newsPage.newPostImg,
+                likesCount: 0,
+            }
+
+            this._state.newsPage.news.push(newNews);
+            this._state.newsPage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEWS-TEXT') {
+            this._state.newsPage.newPostText = action.newText;
+            this._state.newsPage.newPostImg = action.newImg;
             this._callSubscriber(this._state);
         }
     }
