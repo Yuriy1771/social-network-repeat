@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./Message/Message";
+import {addMessageAC, updateNewMessageAC} from "../../Redux/state";
 
 
 function Dialogs(props) {
@@ -21,13 +22,13 @@ function Dialogs(props) {
     let newAddMessage = React.createRef();
 
     let onAddMessage = () => {
-        props.dispatch({type: 'ADD-MESSAGE'});
+        props.dispatch(addMessageAC());
 
     }
 
     let onMessageChange = () => {
         let text = newAddMessage.current.value;
-        props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text});
+        props.dispatch(updateNewMessageAC(text));
     }
 
     return (

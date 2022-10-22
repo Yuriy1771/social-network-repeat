@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './MyPosts.module.css';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import Post from "./Post/Post";
+import {addPostAC, updateNewPostTextAC} from "../../../Redux/state";
 
 function MyPosts(props) {
 
@@ -14,12 +15,12 @@ function MyPosts(props) {
     let newPostElement = React.createRef();
 
     let addPostElement = () => {
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostAC());
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text})
+        props.dispatch(updateNewPostTextAC(text))
     }
 
     return (

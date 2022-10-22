@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './News.module.css';
 import NewsElement from "./NewsElement";
+import {addNewsAC, updateNewsTextAC} from "../../Redux/state";
 
 function News(props) {
 
@@ -12,14 +13,13 @@ function News(props) {
     let newsImg = React.createRef();
 
     let onAddNews = () => {
-        debugger
-        props.dispatch({type: 'ADD-NEWS'});
+        props.dispatch(addNewsAC());
     }
 
     let onNewsChange = () => {
         let text = newsValue.current.value;
         let img = newsImg.current.value;
-        props.dispatch({type: 'UPDATE-NEWS-TEXT', newText: text, newImg: img});
+        props.dispatch(updateNewsTextAC(text,img));
     }
 
     return (
