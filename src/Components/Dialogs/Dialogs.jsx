@@ -19,15 +19,13 @@ function Dialogs(props) {
         )
     })
 
-    let newAddMessage = React.createRef();
-
     let onAddMessage = () => {
         props.dispatch(addMessageAC());
 
     }
 
-    let onMessageChange = () => {
-        let text = newAddMessage.current.value;
+    let onMessageChange = (event) => {
+        let text = event.target.value;
         props.dispatch(updateNewMessageAC(text));
     }
 
@@ -39,8 +37,7 @@ function Dialogs(props) {
             <div className={classes.messages}>
                 {newMessage}
                 <div className={classes.addMessage}>
-                    <textarea ref={newAddMessage}
-                              value={props.newMessageText}
+                    <textarea value={props.newMessageText}
                               onChange={ onMessageChange }
                     />
                     <div className={classes.addMessageBtn}>

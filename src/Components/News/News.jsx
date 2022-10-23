@@ -9,16 +9,13 @@ function News(props) {
         return ( <NewsElement id={n.id} avatar={n.avatar} name={n.name} textNews={n.textNews} imgNews={n.imgNews} likesCount={n.likesCount}/> )
     })
 
-    let newsValue = React.createRef();
-    let newsImg = React.createRef();
-
     let onAddNews = () => {
         props.dispatch(addNewsAC());
     }
 
-    let onNewsChange = () => {
-        let text = newsValue.current.value;
-        let img = newsImg.current.value;
+    let onNewsChange = (event) => {
+        let text = event.target.value;
+        let img = event.target.value;
         props.dispatch(updateNewsTextAC(text,img));
     }
 
@@ -26,13 +23,13 @@ function News(props) {
         <div className={classes.container}>
             <div className={classes.addNews}>
                 <div className={classes.textarea}>
-                    <textarea ref={ newsValue } onChange={ onNewsChange } value={props.state.newsPage.newPostText}></textarea>
+                    <textarea onChange={ onNewsChange } value={props.state.newsPage.newPostText}></textarea>
                 </div>
                 <div className={classes.btnAddNews}>
                     <button onClick={ onAddNews }>Add news</button>
                 </div>
                 <div className={classes.addFile}>
-                    <input type="file" ref={ newsImg }/>
+                    <input type="file" />
                 </div>
             </div>
             {newPost}

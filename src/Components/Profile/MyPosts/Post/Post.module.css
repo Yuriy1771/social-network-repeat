@@ -2,6 +2,7 @@
     padding: 10px;
     background: bisque;
     margin: 10px 0 10px 0;
+    box-shadow: 0 0 5px 1px #c2985d;
 }
 
 .avatar {
