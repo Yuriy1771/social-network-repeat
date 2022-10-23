@@ -1,9 +1,7 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
-const ADD_NEWS = 'ADD-NEWS';
-const UPDATE_NEWS_POST_TEXT = 'UPDATE-NEWS-POST-TEXT';
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import newsReducer from "./news-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 let store = {
     _state: {
@@ -130,88 +128,13 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let newPost = {
-                message: this._state.profilePage.newPostText,
-                likesCount: '0',
-                name: 'Yuriy',
-                id: 3,
-            }
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        }  else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === ADD_MESSAGE) {
-            let newMessage = {
-                id: 4,
-                message: this._state.dialogsPage.newMessageText,
-            }
-            this._state.dialogsPage.messages.push(newMessage);
-            this._state.dialogsPage.newMessageText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-            this._state.dialogsPage.newMessageText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === ADD_NEWS) {
-            let newNews = {
-                id: 6,
-                avatar: "https://i.imgur.com/dmRcOOI.png",
-                name: 'Yuriy',
-                textNews: this._state.newsPage.newPostText,
-                imgNews: this._state.newsPage.newPostImg,
-                likesCount: 0,
-            }
 
-            this._state.newsPage.news.push(newNews);
-            this._state.newsPage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEWS_POST_TEXT) {
-            this._state.newsPage.newPostText = action.newText;
-            this._state.newsPage.newPostImg = action.newImg;
-            this._callSubscriber(this._state);
-        }
-    }
-}
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.newsPage = newsReducer(this._state.newsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
 
-export const addPostAC = () => {
-    return {
-        type: ADD_POST,
-    }
-}
-
-export const updateNewPostTextAC = (text) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT,
-        newText: text,
-    }
-}
-
-export const addMessageAC = () => {
-    return {
-        type: ADD_MESSAGE,
-    }
-}
-
-export const updateNewMessageAC = (text) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_TEXT,
-        newText: text,
-    }
-}
-
-export const addNewsAC = () => {
-    return {
-        type: ADD_NEWS,
-    }
-}
-
-export const updateNewsTextAC = (text, img) => {
-    return {
-    type: UPDATE_NEWS_POST_TEXT,
-    newText: text,
-    newImg: img,
+        this._callSubscriber(this._state);
     }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './News.module.css';
 import NewsElement from "./NewsElement";
-import {addNewsAC, updateNewsTextAC} from "../../Redux/state";
+import {addNewsAC, updateNewsTextAC} from "../../Redux/news-reducer";
 
 function News(props) {
 
