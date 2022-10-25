@@ -7,7 +7,7 @@ import {Route, Routes} from "react-router-dom";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
-import {addMessage, updateNewMessageText} from "./Redux/state";
+import {addMessage, updateNewMessageText} from "./Redux/store";
 
 function App(props) {
     return (
