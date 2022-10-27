@@ -6,7 +6,7 @@ import {addPostAC, updateNewPostTextAC} from "../../../Redux/profile-reducer";
 
 function MyPosts(props) {
 
-    let newPost = props.state.profilePage.posts.map((p) => {
+    let newPost = props.posts.map((p) => {
         return (
             <Post message={p.message} likesCount={p.likesCount} name={p.name}/>
         )
@@ -14,12 +14,12 @@ function MyPosts(props) {
 
 
     let addPostElement = () => {
-        props.dispatch(addPostAC());
+        props.addPost();
     }
 
     let onPostChange = (event) => {
         let text = event.target.value;
-        props.dispatch(updateNewPostTextAC(text))
+        props.updateNewPostText(text);
     }
 
     return (
