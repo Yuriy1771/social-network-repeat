@@ -16,17 +16,17 @@ function App(props) {
             <div className='app-wrapper-content'>
                 <Routes>
                     <Route path='/profile' element={<Profile
-                        store={props.store}
+
                     />}/>
                 </Routes>
                 <Routes>
                     <Route path='/dialogs/*' element={<DialogsContainer
-                        store={props.store}
+
                     />}/>
                 </Routes>
                 <Routes>
                     <Route path='/news' element={<NewsContainer
-                        store={props.store}
+
                     />}/>
                 </Routes>
                 <Routes>

@@ -7,7 +7,7 @@ function Profile(props) {
         <div className={classes.profile}>
             <div className={classes.content}>
                 <MyPostsContainer
-                    store={props.store}
+
                 />
             </div>
         </div>
