@@ -2,13 +2,11 @@ import './App.css';
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
-import Dialogs from "./Components/Dialogs/Dialogs";
 import {Route, Routes} from "react-router-dom";
-import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
-import {addMessage, updateNewMessageText} from "./Redux/store";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
+import NewsContainer from "./Components/News/NewsContainer";
 
 function App(props) {
     return (
@@ -27,9 +25,8 @@ function App(props) {
                     />}/>
                 </Routes>
                 <Routes>
-                    <Route path='/news' element={<News
-                        state={props.state}
-                        dispatch={props.dispatch}
+                    <Route path='/news' element={<NewsContainer
+                        store={props.store}
                     />}/>
                 </Routes>
                 <Routes>
