@@ -4,7 +4,7 @@ import NewsElement from "./NewsElement";
 
 function News(props) {
 
-    let newPost = props.newsPage.news.map((n) => {
+    let newPost = props.state.news.map((n) => {
         return ( <NewsElement id={n.id} avatar={n.avatar} name={n.name} textNews={n.textNews} imgNews={n.imgNews} likesCount={n.likesCount}/> )
     })
 
@@ -22,7 +22,7 @@ function News(props) {
         <div className={classes.container}>
             <div className={classes.addNews}>
                 <div className={classes.textarea}>
-                    <textarea onChange={ onNewsChange } value={props.newsPage.newPostText}></textarea>
+                    <textarea onChange={ onNewsChange } value={props.state.newPostText}></textarea>
                 </div>
                 <div className={classes.btnAddNews}>
                     <button onClick={ onAddNews }>Add news</button>
