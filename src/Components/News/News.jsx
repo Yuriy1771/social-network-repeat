@@ -5,7 +5,11 @@ import NewsElement from "./NewsElement";
 function News(props) {
 
     let newPost = props.state.news.map((n) => {
-        return ( <NewsElement id={n.id} avatar={n.avatar} name={n.name} textNews={n.textNews} imgNews={n.imgNews} likesCount={n.likesCount}/> )
+        return ( <NewsElement id={n.id} avatar={n.avatar}
+                              name={n.name} textNews={n.textNews}
+                              imgNews={n.imgNews} likesCount={n.likesCount}
+                              key={n.id}
+        /> )
     })
 
     let onAddNews = () => {

@@ -7,7 +7,9 @@ function MyPosts(props) {
 
     let newPost = props.posts.map((p) => {
         return (
-            <Post message={p.message} likesCount={p.likesCount} name={p.name}/>
+            <Post message={p.message}
+                  likesCount={p.likesCount}
+                  name={p.name} key={p.id}/>
         )
     })
 

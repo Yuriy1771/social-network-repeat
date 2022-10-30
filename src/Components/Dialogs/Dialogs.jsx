@@ -9,13 +9,13 @@ function Dialogs(props) {
 
     let newDialog = props.dialogsPage.dialogs.map((d) => {
         return (
-            <DialogItem name={d.name} id={d.id} avatar={d.avatar}/>
+            <DialogItem name={d.name} id={d.id} avatar={d.avatar} key={d.id}/>
         )
     })
 
     let newMessage = props.dialogsPage.messages.map((m) => {
         return (
-            <MessageItem message={m.message} id={m.id}/>
+            <MessageItem message={m.message} id={m.id} key={m.id}/>
         )
     })
 

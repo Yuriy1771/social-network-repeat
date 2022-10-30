@@ -51,7 +51,7 @@ let initialState = {
 const newsReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case ADD_NEWS: {
+        case ADD_NEWS:
             let newNews = {
                 id: 6,
                 avatar: "https://i.imgur.com/dmRcOOI.png",
@@ -60,18 +60,19 @@ const newsReducer = (state = initialState, action) => {
                 imgNews: state.newPostImg,
                 likesCount: 0,
             }
-            let copyState = {...state};
-            copyState.news = [...state.news];
-            copyState.news.push(newNews);
-            copyState.newPostText = '';
-            return copyState;
-        }
-        case UPDATE_NEWS_POST_TEXT: {
-            let copyState = {...state};
-            copyState.newPostText = action.newText;
-            copyState.newPostImg = action.newImg;
-            return copyState;
-        }
+            return {
+                ...state,
+                news: [newNews, ...state.news],
+                newPostText: '',
+            };
+
+        case UPDATE_NEWS_POST_TEXT:
+            return  {
+                ...state,
+                newPostText: action.newText,
+                newPostImg: action.newImg,
+            };
+
         default:
             return state;
     }
