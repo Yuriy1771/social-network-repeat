@@ -24,6 +24,9 @@ function Navbar(props) {
             <div className={classes.item}>
                 <NavLink to="/settings" className={ActiveLink}>Settings</NavLink>
             </div>
+            <div className={classes.itemFindUsers}>
+                <NavLink to="/findUsers" className={ActiveLink}>Find Users</NavLink>
+            </div>
             <div className={classes.sidebar}>
             <Sidebar state={props.state}/>
             </div>

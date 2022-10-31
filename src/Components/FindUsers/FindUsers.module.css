@@ -1,0 +1,13 @@
+.container {
+    display: grid;
+    grid-template: ;
+}
+
+.userItem {
+    border: 1px solid black;
+    height: 100px;
+}
+
+.avatar img {
+    width: 60px;
+}
