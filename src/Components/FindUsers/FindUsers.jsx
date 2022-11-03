@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './FindUsers.module.css';
 import axios from "axios";
-import userFhoto from '../../assets/images/avatarDefault.png';
+import userPhoto from '../../assets/images/avatarDefault.png';
 
 function FindUsers(props) {
     if (props.users.length === 0) {
@@ -16,30 +16,30 @@ function FindUsers(props) {
         <div>
             {
                 props.users.map(u => <div key={u.id}>
-                    <span>
+                    <div className={classes.container}>
+                    <div className={classes.containerOne}>
                         <div className={classes.avatar}>
-                            <img src={u.photos.small != null ? u.photos.small: userFhoto}/>
+                            <img src={u.photos.small != null ? u.photos.small: userPhoto}/>
                         </div>
-                        <div>
-                            {u.followed ? <button onClick={() => {
+                        <div className={classes.btnFollowOrUnfollow}>
+                            {u.followed ? <button className={classes.followBtn} onClick={() => {
                                     props.follow(u.id)
                                 }}>Follow</button> :
-                                <button onClick={() => {
+                                <button className={classes.unFollowBtn} onClick={() => {
                                     props.unfollow(u.id)
                                 }}>Unfollow</button>}
 
                         </div>
-                    </span>
-                    <span>
-                        <span>
-                            <div>{u.name}</div>
-                            <div>{u.status}</div>
-                        </span>
-                        <span>
-                            <div>u.location.country</div>
-                            <div>u.location.city</div>
-                        </span>
-                    </span>
+                    </div>
+                    <div className={classes.containerTwo}>
+                            <div className={classes.fullname}>{u.name}</div>
+                            <div className={classes.status}>{u.status}This is status</div>
+                    </div>
+                    <div className={classes.containerThree}>
+                            <div className={classes.country}>u.location.country</div>
+                            <div className={classes.city}>u.location.city</div>
+                    </div>
+                    </div>
                 </div>)
             }
         </div>

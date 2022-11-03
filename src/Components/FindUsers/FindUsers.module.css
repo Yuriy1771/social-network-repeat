@@ -1,6 +1,9 @@
 .container {
     display: grid;
-    grid-template: ;
+    grid-template-areas: 'one two three' ;
+    grid-template-columns: 1fr 8fr 1fr;
+    margin: 15px 10px 0 10px;
+    box-shadow: 0 0 5px 1px #c2985d;
 }
 
 .userItem {
@@ -8,6 +11,62 @@
     height: 100px;
 }
 
-.avatar img {
-    width: 60px;
+.containerOne {
+    grid-area: one;
+    background: bisque;
+    padding: 10px;
 }
+
+.avatar img {
+    width: 70px;
+    margin: 0 0 0 14px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 1px #c2985d;
+}
+
+.btnFollowOrUnfollow .followBtn {
+    width: 100px;
+    background: #ffdeb7;
+    box-shadow: 0 0 5px 1px #c2985d;
+    border: none;
+    cursor: pointer;
+}
+
+.btnFollowOrUnfollow .followBtn:hover {
+    background: #ffbf7b;
+    transition: ease-out .5s;
+}
+
+.btnFollowOrUnfollow .unFollowBtn {
+    width: 100px;
+    background: #ffbf7b;
+    box-shadow: 0 0 5px 1px #c2985d;
+    border: none;
+    cursor: pointer;
+}
+
+.btnFollowOrUnfollow .unFollowBtn:hover {
+    background: #ffdeb7;
+    transition: ease-out .5s;
+}
+
+.containerTwo {
+    grid-area: two;
+    background: bisque;
+    padding: 10px 0 10px 0;
+}
+
+.containerTwo .fullname {
+    font-size: 22px;
+}
+
+.containerTwo .status {
+    font-style: italic;
+}
+
+.containerThree {
+    grid-area: three;
+    background: bisque;
+    padding: 10px 10px 10px 0;
+}
+
