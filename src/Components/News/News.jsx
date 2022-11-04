@@ -32,7 +32,7 @@ function News(props) {
                     <button onClick={ onAddNews }>Add news</button>
                 </div>
                 <div className={classes.addFile}>
-                    <input type="file" />
+                    <input className={classes.addFileInput} type="file" />
                 </div>
             </div>
             {newPost}

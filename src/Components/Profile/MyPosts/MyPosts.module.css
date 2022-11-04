@@ -8,6 +8,28 @@
 .addPostBlock textarea {
     width: 1000px;
     height: 60px;
+    background: #ffeeda;
+    border: 1px solid #c2985d;
+}
+
+.addPostBlock textarea:focus {
+    background: #ffdeb7;
+    transition: ease-out .5s;
+}
+
+.addPostBlock button {
+    margin-top: 5px;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px 1px #c2985d;
+    background: #ffdeb7;
+    cursor: pointer;
+}
+.addPostBlock button:hover {
+    background: #e3c08d;
+    transition: ease-out .5s;
 }
 
 .myPosts p{

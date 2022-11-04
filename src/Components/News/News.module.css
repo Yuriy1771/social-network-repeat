@@ -8,19 +8,37 @@
 .textarea textarea {
     width: 455px;
     height: 40px;
+    background: #ffeeda;
+    border: 1px solid #c2985d;
+}
+
+.textarea textarea:focus {
+    background: #ffdeb7;
+    transition: ease-out .5s;
 }
 
 .btnAddNews {
     padding: 0 0 0 10px;
+
 }
 .btnAddNews button {
     width: 100px;
-    height: 44px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px 1px #c2985d;
+    background: #ffdeb7;
     cursor: pointer;
     margin-bottom: 5px;
+}
+
+.btnAddNews button:hover {
+    background: #e3c08d;
+    transition: ease-out .5s;
 }
 
 .addFile input {
     padding: 0 0 0 10px;
     width: 119px;
+    margin-bottom: 5px;
 }
