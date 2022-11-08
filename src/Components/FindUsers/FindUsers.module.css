@@ -70,7 +70,26 @@
     padding: 10px 10px 10px 0;
 }
 
+.containerSelect {
+    overflow: hidden;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    box-shadow: 0 0 5px 1px #c2985d;
+    margin: 5px 5px 0px 5px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.containerSelects {
+    text-align: center;
+}
+
 .select {
     font-weight: bold;
-    font-size: 20px;
+    background: #ffd5a5;
+    font-size: 14px;
+    width: 23px;
+    height: 23px;
 }
