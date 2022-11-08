@@ -93,3 +93,12 @@
     width: 23px;
     height: 23px;
 }
+
+.preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preloader img{
+
+}
