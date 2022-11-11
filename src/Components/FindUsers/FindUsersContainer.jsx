@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {
-    followAC,
-    setCurrentPageAC,
-    setIsLoadingAC,
-    setUsersAC,
-    setUsersTotalCountAC,
-    unfollowAC
+    follow,
+    setCurrentPage,
+    toggleIsLoading,
+    setUsers,
+    setUsersTotalCount,
+    unfollow
 } from "../../Redux/findUsersReducer";
 import axios from "axios";
 import FindUsers from "./FindUsers";
@@ -64,30 +64,11 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (usersId) => {
-            dispatch(followAC(usersId))
-        },
-        unfollow: (usersId) => {
-            dispatch(unfollowAC(usersId))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users))
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber))
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setUsersTotalCountAC(totalCount))
-        },
-        toggleIsLoading: (isLoading) => {
-            dispatch(setIsLoadingAC(isLoading))
-        }
-    }
-}
 
-
-const FindUsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
+const FindUsersContainer = connect(mapStateToProps, {
+    follow, unfollow,
+    setUsers, setCurrentPage,
+    setUsersTotalCount, toggleIsLoading,
+})(UsersContainer);
 
 export default FindUsersContainer;
