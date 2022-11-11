@@ -25,7 +25,6 @@ function MyPosts(props) {
 
     return (
         <div>
-            <ProfileInfo/>
             <div className={classes.myPosts}>
                 <p>My posts</p>
             </div>

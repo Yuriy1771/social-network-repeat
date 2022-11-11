@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './FindUsers.module.css';
 import userPhoto from '../../assets/images/avatarDefault.png';
-import axios from "axios";
+import {NavLink} from "react-router-dom";
 
 function FindUsers(props) {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -33,7 +33,9 @@ function FindUsers(props) {
                     <div className={classes.container}>
                         <div className={classes.containerOne}>
                             <div className={classes.avatar}>
-                                <img src={u.photos.small != null ? u.photos.small : userPhoto}/>
+                                <NavLink to={'/profile' + u.id}>
+                                    <img src={u.photos.small != null ? u.photos.small : userPhoto}/>
+                                </NavLink>
                             </div>
                             <div className={classes.btnFollowOrUnfollow}>
                                 {u.followed ? <button className={classes.followBtn} onClick={() => {

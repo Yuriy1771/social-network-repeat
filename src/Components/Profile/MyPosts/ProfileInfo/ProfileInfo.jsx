@@ -1,7 +1,11 @@
 import React from 'react';
 import classes from './ProfileInfo.module.css';
+import Preloader from "../../../common/preloader/Preloader";
 
 function ProfileInfo(props) {
+    if (!props.profile) {
+        return <Preloader/>
+    }
     return (
         <div>
         <div className={classes.logo}>
@@ -10,11 +14,11 @@ function ProfileInfo(props) {
         </div>
         <div className={classes.information}>
             <div className={classes.avatar}>
-                <img src="https://i.imgur.com/dmRcOOI.png" alt="ava"/>
+                <img src={props.profile.photos.large} alt="ava"/>
             </div>
             <div className={classes.description}>
-                <div className={classes.name}><p>Yuriy Dementev</p></div>
-                <div className={classes.status}><p>Hello! i am make this website)</p></div>
+                <div className={classes.name}><p>{props.profile.fullName}</p></div>
+                <div className={classes.status}><p>{props.profile.aboutMe}</p></div>
             </div>
         </div>
 </div>
