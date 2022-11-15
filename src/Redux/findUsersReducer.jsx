@@ -65,7 +65,7 @@ export const follow = (userId) => ({type: FOLLOW, userId,});
 export const unfollow = (userId) => ({type: UNFOLLOW,userId,});
 export const setUsers = (users) => ({ type: SET_USERS,users,});
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
-export const setUsersTotalCount = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, count : totalCount});
+export const setTotalUsersCount = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, count : totalCount});
 export const toggleIsLoading = (isLoading) => ({ type: TOGGLE_IS_LOADING,isLoading,});
 
 export default findUsersReducer;

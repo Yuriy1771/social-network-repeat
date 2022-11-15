@@ -23,17 +23,18 @@ function FindUsers(props) {
                     return <div className={classes.containerSelect}>
                         <div onClick={(e) => {
                             props.onPageChanged(p)
-                        }} className={props.currentPage === p && classes.select}>{p}</div>
+                        }} className={props.currentPage === p && classes.select}> {" " + p}</div>
                     </div>
                 })}
 
             </div>
             {
                 props.users.map(u => <div key={u.id}>
+
                     <div className={classes.container}>
                         <div className={classes.containerOne}>
                             <div className={classes.avatar}>
-                                <NavLink to={'/profile' + u.id}>
+                                <NavLink to={'/profile/' + u.id}>
                                     <img src={u.photos.small != null ? u.photos.small : userPhoto}/>
                                 </NavLink>
                             </div>

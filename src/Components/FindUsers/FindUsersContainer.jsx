@@ -5,7 +5,7 @@ import {
     setCurrentPage,
     toggleIsLoading,
     setUsers,
-    setUsersTotalCount,
+    setTotalUsersCount,
     unfollow
 } from "../../Redux/findUsersReducer";
 import axios from "axios";
@@ -65,10 +65,14 @@ const mapStateToProps = (state) => {
 }
 
 
+
 const FindUsersContainer = connect(mapStateToProps, {
-    follow, unfollow,
-    setUsers, setCurrentPage,
-    setUsersTotalCount, toggleIsLoading,
-})(UsersContainer);
+     follow,
+     unfollow,
+     setUsers,
+    setCurrentPage,
+    setTotalUsersCount,
+     toggleIsLoading,
+    })(UsersContainer);
 
 export default FindUsersContainer;

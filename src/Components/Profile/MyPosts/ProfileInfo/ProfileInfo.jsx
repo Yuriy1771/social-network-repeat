@@ -3,9 +3,11 @@ import classes from './ProfileInfo.module.css';
 import Preloader from "../../../common/preloader/Preloader";
 
 function ProfileInfo(props) {
+
     if (!props.profile) {
         return <Preloader/>
     }
+
     return (
         <div>
         <div className={classes.logo}>
